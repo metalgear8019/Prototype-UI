@@ -1,0 +1,69 @@
+<html lang="en" ng-app="StarterApp">
+  <head>
+    <link rel="stylesheet" href="angular-material.min.css">
+    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="initial-scale=1" />
+  </head>
+  <body layout="column" ng-controller="AppCtrl">
+    <md-toolbar layout="row">
+      <div class="md-toolbar-tools">
+        <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+          <md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
+        </md-button>
+        <h1>Hello World</h1>
+      </div>
+    </md-toolbar>
+    <div layout="row" flex>
+        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+          
+        </md-sidenav>
+        <div layout="column" flex id="content">
+            <md-content layout="column" flex class="md-padding">
+            	
+
+<div ng-controller="AppCtrl2" class="md-padding">
+  <div layout="row">
+    <div flex="50" flex-md="100" layout="column">
+      <fieldset class="standard" flex>
+        <legend>Using <code>md-checkbox</code> with <code>ng-checked</code></legend>
+        <div layout="row" layout-wrap>
+          <div flex="50" ng-repeat="item in items">
+            <md-checkbox ng-checked="exists(item, selected)" ng-click="toggle(item, selected)">
+              {{ item }} <span ng-if="exists(item, selected)">selected</span>
+            </md-checkbox>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div flex="50" flex-md="100" layout="column">
+      <fieldset class="standard" flex>
+        <legend>Using <code>&lt;input type="checkbox"&gt;</code></legend>
+        <div layout="row" layout-wrap>
+          <div ng-repeat="item in items" class="standard" flex="50">
+            <label>
+              <input type="checkbox" ng-checked="exists(item, selected)" ng-click="toggle(item, selected)"/>
+              {{ item }}
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  <h2 class="md-title">Selected Items</h2>
+  <code style="display: block; padding: 8px;">{{selected | json}}</code>
+</div>
+
+
+            </md-content>
+        </div>
+    </div>
+    <!-- Angular Material Dependencies -->
+    <script src="angular.min.js"></script>
+    <script src="angular-animate.min.js"></script>
+    <script src="angular-aria.min.js"></script>
+
+    <script src="angular-material.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

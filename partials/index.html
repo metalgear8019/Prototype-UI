@@ -1,0 +1,48 @@
+<div layout="column" id="content" flex>
+  <md-toolbar class="md-tall">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings">
+          <md-icon md-svg-icon="img/menu.svg"></md-icon>
+        </md-button>
+        <h2>
+          <span>Toolbar with Icon Buttons</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Favorite">
+          <!-- search ni cya -->
+          <md-icon md-svg-icon="img/favorite.svg" style="color: greenyellow;"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-icon md-svg-icon="img/more_vert.svg"></md-icon>
+        </md-button>
+      </div>
+  </md-toolbar>
+  <md-content layout="column" flex>
+    
+    <!-- Meals list -->
+    <md-list>
+      <md-subheader class="md-no-sticky">Today</md-subheader>
+      <md-list-item class="md-3-line" ng-repeat="meal in meals">
+        <img ng-src="{{ meal.image }}" class="md-avatar" alt="{{meal.name}}" />
+        <div class="md-list-item-text">
+          <h3>{{ meal.name }}</h3>
+          <p>{{ meal.quantity + ' ' + meal.unit }} -> {{ meal.calories }}</p>
+        </div>
+      </md-list-item>
+      <md-divider></md-divider>
+      <md-subheader class="md-no-sticky">Yesterday</md-subheader>
+      <md-list-item class="md-2-line">
+      <img ng-src="{{ meals[0].image }}" class="md-avatar" alt="{{meals[0].name}}" />
+        <div class="md-list-item-text">
+          <h3>{{ meals[0].name }}</h3>
+          <p>{{ meals[0].quantity + ' ' + meals[0].unit }} -> {{ meals[0].calories }}</p>
+        </div>
+      </md-list-item>
+    </md-list>
+  </md-content>
+</div>
+
+<!-- The fab ! -->
+<md-button ng-href="#/add" aria-label="menu" class="md-fab md-primary locked-on-bottom-right">
+  <md-icon md-svg-src="img/angular-logo.svg"></md-icon>
+</md-button>

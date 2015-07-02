@@ -1,0 +1,27 @@
+<div layout="column" id="content" flex>
+  <md-toolbar class="md-tall" layout="row">
+    <div class="md-toolbar-tools">
+      <i class="bars_nga_icon" ng-click="toggleMenu()"></i>
+      <h1 flex>Add Meal</h1>
+    </div>
+  </md-toolbar>
+  <md-content layout="column" layout-padding flex>
+
+    <!-- The Add Meal Form -->
+    <md-input-container flex>
+      <label>First name</label>
+      <input ng-model="user.firstName">
+    </md-input-container>
+    <md-input-container flex>
+      <label>Last Name</label>
+      <input ng-model="theMax">
+    </md-input-container>
+
+  </md-content>
+</div>
+
+<!-- The fab ! -->
+<!-- TODO : Submit icon dapat OK ? -->
+<md-button ng-href="#/add" aria-label="menu" class="md-fab md-primary locked-on-bottom-right">
+  <md-icon md-svg-src="img/angular-logo.svg"></md-icon>
+</md-button>
